@@ -32,4 +32,4 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     # serve the application on port 7410
-    app.run(host='0.0.0.0', port=7410)
+    app.run(host=process.env.HOST, port=process.env.PORT)

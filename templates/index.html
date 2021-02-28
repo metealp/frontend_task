@@ -2,6 +2,25 @@
 {% block content %}
 
 <!-- Your code here ! -->
-<div id="container"></div>
+<div id="page-wrapper">
+    <div id="nav-rail">
+
+    </div>
+
+    <div id="content">
+        <div id="master"></div>
+        {% for number in range(10) %}
+            <div class="sensor-readings-container">
+                <h3>Sensor{{ number }}</h3>
+                <div class="reading-chart" id="sensor{{number}}-readings-chart"></div>
+                <div class="distributed-chart" id="sensor{{number}}-distributed-percent-chart"></div>
+                <div class="distributed-chart" id="sensor{{number}}-distributed-polar-chart"></div>
+                <div class="distributed-chart" id="sensor{{number}}-total-distribution-chart"></div>
+                <div class="sensor-statistics" id="sensor{{number}}-statistics"></div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}

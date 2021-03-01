@@ -1,0 +1,49 @@
+
+.sensor-readings-container.ui.segment > h3 {
+    margin-top: 0;
+}
+
+.distribution-chart {
+
+}
+
+.ui.grid > .wide.column, 
+.ui.segment{
+    padding: 0.5rem;
+}
+
+.ui.grid {
+    margin: -0.5rem;
+}
+/* Smartphones ----------- */
+@media only screen and (max-device-width : 768px) {
+    .distribution-chart {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-device-width : 768px) {
+    .reading-chart {
+        height: 300px;
+    }
+    .distribution-chart {
+        height: 330px;
+    }
+    .sensor-readings-container.ui.segment {
+        height: calc(100vh - 30px);
+    }    
+}
+
+/* @media only screen 
+and (min-device-width : 481px) 
+and (max-device-width : 768px) {
+    .distribution-chart {
+        height: 100%;
+    }
+}
+
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV */

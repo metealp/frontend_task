@@ -10,7 +10,14 @@
       {% endblock %}
     </title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/semantic-grid.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/semantic-loader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/semantic-rail.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/semantic-segment.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/semantic-sticky.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <script type="application/javascript" src = "{{ url_for('static', filename = 'lib/semantic-sticky.js') }}" ></script>
     <script type="module" src = "{{ url_for('static', filename = 'js/sst-charts.mjs') }}" ></script>
     <!-- application/javascript -->
   </head>

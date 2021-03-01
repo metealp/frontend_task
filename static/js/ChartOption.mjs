@@ -114,7 +114,19 @@ export const oneSensorReadingChartOptions = (sampleCodes, readings) => {
             text: 'Sensor Readings'
         },
         xAxis: {
-            categories: sampleCodes
+            categories: sampleCodes,
+            plotLines: [{
+                color: '#FF0000',
+                width: 2,
+                value: 199.5,           
+                label: {
+                    align:"left",
+                    text:"Change Point",
+                    verticalAlign:top,
+                    x:5,
+                    y:1,
+                }
+            }]
         },
         legend: {
             enabled: false
@@ -127,6 +139,9 @@ export const oneSensorReadingChartOptions = (sampleCodes, readings) => {
 
 export const allSensorsReadingChartOptions = (sampleCodes, series) => {
     return {
+        rangeSelector: {
+            selected: 1
+        },
         chart: {
             zoomType: 'x'
         },
@@ -134,7 +149,19 @@ export const allSensorsReadingChartOptions = (sampleCodes, series) => {
             text: 'Sensor Readings'
         },
         xAxis: {
-            categories: sampleCodes
+            categories: sampleCodes,
+            plotLines: [{
+                color: '#FF0000',
+                width: 2,
+                value: 199.5,
+                label: {
+                    align:"left",
+                    text:"Change Point",
+                    verticalAlign:"top",
+                    x:5,
+                    y:1,
+                }
+            }]
         },
         legend: {
             enabled: false

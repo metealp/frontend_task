@@ -30,10 +30,11 @@ const Scroll = {
             isScrolling = setTimeout(function() {
                 // Run the callback
                 let yDifference = 0;
-                let closestTitleId = "intro";
+                let closestTitleId = "intro-container";
                 const currentY = document.documentElement.scrollTop;
+                console.log(sectionsWithPositions)
                 sectionsWithPositions.forEach(section => {
-                    if(section.position - currentY + 20 < yDifference){
+                    if(section.position - currentY + 10 < yDifference){
                         yDifference = currentY - section.position;
                         closestTitleId = section.elementId
                     }

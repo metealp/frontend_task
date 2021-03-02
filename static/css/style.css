@@ -6,7 +6,9 @@
 .distribution-chart {
 
 }
-
+#main-header {
+    text-align: center;
+}
 #content {
     padding-left: 160px;
 }

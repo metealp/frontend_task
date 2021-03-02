@@ -32,7 +32,6 @@ const Scroll = {
                 let yDifference = 0;
                 let closestTitleId = "intro-container";
                 const currentY = document.documentElement.scrollTop;
-                console.log(sectionsWithPositions)
                 sectionsWithPositions.forEach(section => {
                     if(section.position - currentY + 10 < yDifference){
                         yDifference = currentY - section.position;

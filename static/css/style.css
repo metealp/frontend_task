@@ -7,6 +7,10 @@
 
 }
 
+#content {
+    padding-left: 160px;
+}
+
 .sensor-statistics {
     height: calc(100% - 1rem);
 }
@@ -103,38 +107,53 @@ and (max-device-width : 768px) {
     -moz-animation: fadeIn ease 2s;
     -o-animation: fadeIn ease 2s;
     -ms-animation: fadeIn ease 2s;
-    }
-    @keyframes fadeIn {
+}
+@keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
-    }
-    
-    @-moz-keyframes fadeIn {
+}
+
+@-moz-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
-    }
-    
-    @-webkit-keyframes fadeIn {
+}
+
+@-webkit-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
-    }
-    
-    @-o-keyframes fadeIn {
+}
+
+@-o-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
-    }
-    
-    @-ms-keyframes fadeIn {
+}
+
+@-ms-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
-    }
+}
+
+#smart-rail{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    margin: 10px 0 0 0;
+    left: 0px;
+    padding-left: 10px;
+    width: 150px;
+}
+
+#smart-rail .header {
+    font-weight: bold;
+    margin-bottom: 6px;
+}

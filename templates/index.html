@@ -5,10 +5,35 @@
 <div id="page-wrapper" class="">
     <div id="page-loader" class="ui active huge text loader">Loading</div>
     <div id="content" class="hidden fade-in">
-        <div id="master"></div>
+        <div id="smart-rail" class="ui left internal rail">
+            <div class="ui segment">
+                <div class="ui link list">
+                    <div class="header">Table of Contents</div>
+                    <a id="intro-container-link" class="active item" onclick="Scroll.scrollToElement('intro')">
+                        Introduction
+                    </a>
+                    <a id="master-container-link" class="item" onclick="Scroll.scrollToElement('master')">
+                        Master Chart
+                    </a>
+                    {% for number in range(10) %}
+                        <a class="item" 
+                        onclick="Scroll.scrollToElement('sensor{{number}}-container')"
+                        id='sensor{{number}}-container-link'>
+                            Sensor{{ number }}
+                        </a>
+                    {% endfor %}
+                    </div>
+            </div>
+        </div>
+        <div id="intro-container" class="ui segment ss-section">
+            <div id="intro"></div>
+        </div>
+        <div id="master-container" class="ui segment ss-section">
+            <div id="master"></div>
+        </div>
         {% for number in range(10) %}
-            <div class="sensor-readings-container ui segment">
-                <h3>Sensor{{ number }}</h3>
+            <div id="sensor{{number}}-container" class="sensor-readings-container ui segment ss-section">
+                <h3 id="sensor{{number}}-header">Sensor {{ number }}</h3>
                 <div class="ui grid">
                     <div class="ten wide column">
                         <div class="reading-chart ui segment" id="sensor{{number}}-readings-chart"></div>

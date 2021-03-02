@@ -82,5 +82,6 @@ fetch('/data')
         loader.classList.remove("active");
         let content = document.getElementById("content");
         content.classList.remove("hidden");
+        Scroll.scrollListener()
     });
 });

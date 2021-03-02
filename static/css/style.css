@@ -7,6 +7,47 @@
 
 }
 
+.sensor-statistics {
+    height: calc(100% - 1rem);
+}
+.sensor-statistics > h5 {
+    color: #333333;
+    font-size: 18px;
+    fill: #333333;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+    margin: 5px 0 10px 0;
+    font-weight: initial;
+    text-align: center;
+}
+
+.sensor-statistics table{
+    width: 100%;
+    text-align: center;
+}
+
+.sensor-statistics table th,
+.sensor-statistics table td{
+    padding: 5px;
+    border-right: 1px solid black;
+}
+
+.sensor-statistics table th:last-child,
+.sensor-statistics table td:last-child{
+    border-right: none;
+}
+
+.sensor-statistics table thead th{
+    border-bottom: 2px solid black;
+}
+
+.sensor-statistics table tbody tr td{
+    border-bottom: 1px solid black;
+}
+
+.sensor-statistics table tbody tr:last-child td{
+    border-bottom: none;
+}
+
 .ui.grid > .wide.column, 
 .ui.segment{
     padding: 0.5rem;

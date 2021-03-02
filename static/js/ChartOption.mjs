@@ -126,7 +126,31 @@ export const oneSensorReadingChartOptions = (sampleCodes, readings) => {
                     x:5,
                     y:1,
                 }
-            }]
+            }],
+            plotBands: [{
+                from: 0,
+                to: 199,
+                color: '#EFFFFF',
+                label: {
+                    text: '<em>Class: 1</em>',
+                    style: {
+                        color: '#f2f194'
+                    },
+                    y: 10
+                }
+            },{
+                from: 200,
+                to: 399,
+                color: '#f2f194',
+                label: {
+                    text: '<em>Class: -1</em>',
+                    style: {
+                        color: '#EFFFFF'
+                    },
+                    y: 10
+                }
+            },
+            ]
         },
         legend: {
             enabled: false
@@ -161,7 +185,31 @@ export const allSensorsReadingChartOptions = (sampleCodes, series) => {
                     x:5,
                     y:1,
                 }
-            }]
+            }],
+            plotBands: [{
+                from: 0,
+                to: 199,
+                color: '#EFFFFF',
+                label: {
+                    text: '<em>Class: 1</em>',
+                    style: {
+                        color: '#f2f194'
+                    },
+                    y: 10
+                }
+            },{
+                from: 200,
+                to: 399,
+                color: '#f2f194',
+                label: {
+                    text: '<em>Class: -1</em>',
+                    style: {
+                        color: '#EFFFFF'
+                    },
+                    y: 10
+                }
+            },
+            ]
         },
         legend: {
             enabled: false

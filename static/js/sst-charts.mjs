@@ -78,5 +78,9 @@ fetch('/data')
         const len = fetched.class_label.length;
         chart.xAxis[0].setExtremes(len-11,len-1);
         chart.showResetZoom();
+        let loader = document.getElementById("page-loader");
+        loader.classList.remove("active");
+        let content = document.getElementById("content");
+        content.classList.remove("hidden");
     });
 });

@@ -2,8 +2,9 @@
 {% block content %}
 
 <!-- Your code here ! -->
-<div id="page-wrapper">
-    <div id="content" class="">
+<div id="page-wrapper" class="">
+    <div id="page-loader" class="ui active huge text loader">Loading</div>
+    <div id="content" class="hidden fade-in">
         <div id="master"></div>
         {% for number in range(10) %}
             <div class="sensor-readings-container ui segment">

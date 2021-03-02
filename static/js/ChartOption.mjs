@@ -113,6 +113,9 @@ export const oneSensorReadingChartOptions = (sampleCodes, readings) => {
         title: {
             text: 'Sensor Readings'
         },
+        subtitle: {
+            text: 'Click and drag in the plot area to zoom in'
+        },
         xAxis: {
             categories: sampleCodes,
             plotLines: [{
@@ -171,6 +174,9 @@ export const allSensorsReadingChartOptions = (sampleCodes, series) => {
         },
         title: {
             text: 'Sensor Readings'
+        },
+        subtitle: {
+            text: 'Click and drag in the plot area to zoom in'
         },
         xAxis: {
             categories: sampleCodes,

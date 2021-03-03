@@ -1,18 +1,14 @@
 import Highcharts from 'https://code.highcharts.com/es-modules/masters/highcharts.src.js';
 import SensorDF from './Sensor.mjs'
-import { oneSensorReadingChartOptions, 
-    allSensorsReadingChartOptions, 
-    distributionPolarChartOptions, 
-    distributionPercChartOptions,
-    totalDistributionChartOptions} from './ChartOption.mjs'
+import { ChartOption } from './ChartOption.mjs'
 
-let fetched;
-let masterSerie = [];
+document.addEventListener("DOMContentLoaded", async function() {
+    let masterSerie = [];
+    const response = await fetch('/data');
+    const result = await response.json();
+    const fetched = result.sensor_data;
+    const sampleIndexes = fetched["sample index"];
 
-fetch('/data')
-.then( response => response.json())
-.then(result => {
-    fetched = result.sensor_data;
     const pivotIndex = fetched.class_label.indexOf(-1)
     for(let i=0; i<10; i++){
         const sensor = `sensor${i}`;
@@ -20,7 +16,7 @@ fetch('/data')
         const sensorData = new SensorDF(fetched[`${sensor}`], sensor, pivotIndex)
         
         //RAW READINGS CHART
-        const readingsChartOptions = oneSensorReadingChartOptions(fetched.sample_index, sensorData.rawData)
+        const readingsChartOptions = ChartOption.OneSensorReading(sampleIndexes, sensorData.rawData)
         Highcharts.chart(`${sensor}-readings-chart`, readingsChartOptions, function(chart) {
             const len = sensorData.rawData.length
             chart.xAxis[0].setExtremes(len-11,len-1);
@@ -54,7 +50,7 @@ fetch('/data')
             name: 'negative',
             data: polarizedData
         }];
-        Highcharts.chart(`${sensor}-distributed-polar-chart`, distributionPolarChartOptions(distributedPolarSeries))
+        Highcharts.chart(`${sensor}-distributed-polar-chart`, ChartOption.DistributedPolar(distributedPolarSeries))
 
         //DISTRIBUTION PERCENTAGE CHART
         const distributedPercSeries = [
@@ -67,13 +63,13 @@ fetch('/data')
                 data: sensorData.negativeDistribution
             }
         ];
-        Highcharts.chart(`${sensor}-distributed-percent-chart`, distributionPercChartOptions(distributedPercSeries))
+        Highcharts.chart(`${sensor}-distributed-percent-chart`, ChartOption.DistributionPercentage(distributedPercSeries))
 
         //TOTAL DISTRIBUTION CHART
-        Highcharts.chart(`${sensor}-total-distribution-chart`, totalDistributionChartOptions([{name: "total", data: sensorData.totalDistribution}]))
+        Highcharts.chart(`${sensor}-total-distribution-chart`, ChartOption.DistributedTotal([{name: "total", data: sensorData.totalDistribution}]))
     }
 
-    const masterReadingsChartOptions = allSensorsReadingChartOptions(fetched.sample_index, masterSerie);
+    const masterReadingsChartOptions = ChartOption.AllSensorsReading(sampleIndexes, masterSerie);
     Highcharts.chart(`master`, masterReadingsChartOptions, function(chart) {
         const len = fetched.class_label.length;
         chart.xAxis[0].setExtremes(len-11,len-1);
@@ -85,3 +81,8 @@ fetch('/data')
         Scroll.scrollListener()
     });
 });
+// fetch('/data')
+// .then( response => response.json())
+// .then(result => {
+    
+// });

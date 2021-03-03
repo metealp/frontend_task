@@ -44,7 +44,3 @@ const Scroll = {
         });
     }
 }
-
-// document.addEventListener("DOMContentLoaded", function() {
-//         Scroll.scrollListener()
-// });

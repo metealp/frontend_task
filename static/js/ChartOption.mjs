@@ -134,7 +134,13 @@ export const ChartOption = {
             },  
             series: [{
                 data: readings
-            }]
+            }],
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x.charAt(0).toUpperCase() + this.x.slice(1) + '</b>' +
+                        '<br/>' + this.y.toFixed(4) ;
+                },
+            },
         }
     },
     AllSensorsReading: (sampleCodes, series) => {
@@ -194,7 +200,17 @@ export const ChartOption = {
             },
             legend: {
                 enabled: false
-            },  
+            },
+            tooltip: {
+                shared: true,
+                crosshairs: true,
+                formatter: function () {
+                    return this.points.reduce(function (s, point) {
+                        return s + '<br/>' + '<div>' + point.series.name.charAt(0).toUpperCase() + point.series.name.slice(1) + ': ' +
+                            point.y.toFixed(4) + '</div>';
+                    }, '<b>' + this.x.charAt(0).toUpperCase() + this.x.slice(1) + '</b>');
+                },
+            },
             series: series
         }
     },

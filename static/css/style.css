@@ -12,7 +12,10 @@ body {
 }
 #main-header {
     text-align: center;
+}
+#main-header.aligned-header {
     padding-left:200px;
+    transition: padding ease 2s;
 }
 #content {
     padding-left: 200px;

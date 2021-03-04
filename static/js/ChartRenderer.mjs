@@ -78,11 +78,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         loader.classList.remove("active");
         let content = document.getElementById("content");
         content.classList.remove("hidden");
+        let header = document.getElementById("main-header");
+        header.classList.add("aligned-header");
         Scroll.scrollListener()
     });
 });
-// fetch('/data')
-// .then( response => response.json())
-// .then(result => {
-    
-// });

@@ -1,12 +1,10 @@
 
-.sensor-readings-container.ui.segment > h3 {
-    margin-top: 0;
+/*******************************
+        Top Level
+*******************************/
+html {
+    scroll-behavior: smooth;
 }
-
-.distribution-chart {
-
-}
-
 body {
     background: #f5f5f5;
 }
@@ -20,9 +18,65 @@ body {
 #content {
     padding-left: 200px;
 }
+.ui.grid > .wide.column, 
+.ui.segment{
+    padding: 0.5rem;
+}
+.ui.grid {
+    margin: -0.5rem;
+}
+.hidden {
+    display: none;
+}
+
+/*******************************
+        Rail / Sidenav
+*******************************/
+
+#smart-rail{
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    margin: 10px 0 0 0;
+    left: 0px;
+    padding: 10px;
+    width: 190px;
+}
+#smart-rail .header {
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 0;
+    border-bottom: 2px solid;
+}
+#smart-rail > .ui.segment {
+    box-shadow: 1px 1px 4px #cbced1;
+} 
+.ui.list .list > .item, .ui.list > .item, ol.ui.list li, ul.ui.list li {
+    padding: 10px 5px;
+}
+.ui.list .list > .item:last-child, .ui.list > .item:last-child, ol.ui.list li:last-child, ul.ui.list li:last-child {
+    padding-bottom: 10px;
+}
+
+/*******************************
+        Chart
+*******************************/
 
 .sensor-statistics {
     height: calc(100% - 1rem);
+}
+.reading-chart {
+    height: 300px;
+}
+.sensor-readings-container.ui.segment {
+    box-shadow: 1px 1px 4px #cbced1;
+    height: max-content;
+}   
+.sensor-readings-container.ui.segment > h3 {
+    margin-top: 0;
+}
+.distribution-chart {
+    height: 330px;
 }
 .sensor-statistics > h5 {
     color: #333333;
@@ -33,84 +87,32 @@ body {
     font-weight: initial;
     text-align: center;
 }
-
 .sensor-statistics table{
     width: 100%;
     text-align: center;
 }
-
 .sensor-statistics table th,
 .sensor-statistics table td{
     padding: 5px;
     border-right: 1px solid black;
 }
-
 .sensor-statistics table th:last-child,
 .sensor-statistics table td:last-child{
     border-right: none;
 }
-
 .sensor-statistics table thead th{
     border-bottom: 2px solid black;
 }
-
 .sensor-statistics table tbody tr td{
     border-bottom: 1px solid black;
 }
-
 .sensor-statistics table tbody tr:last-child td{
     border-bottom: none;
-}
+} 
 
-.ui.grid > .wide.column, 
-.ui.segment{
-    padding: 0.5rem;
-}
-
-.ui.grid {
-    margin: -0.5rem;
-}
-/* Smartphones ----------- */
-@media only screen and (max-device-width : 768px) {
-    .distribution-chart {
-        height: 100%;
-    }
-}
-
-@media only screen and (min-device-width : 768px) {
-    .reading-chart {
-        height: 300px;
-    }
-    .distribution-chart {
-        height: 330px;
-    }
-    .sensor-readings-container.ui.segment {
-        /* height: calc(100vh - 30px); */
-        height: max-content;
-
-    }    
-}
-
-/* @media only screen 
-and (min-device-width : 481px) 
-and (max-device-width : 768px) {
-    .distribution-chart {
-        height: 100%;
-    }
-}
-
-320px — 480px: Mobile devices
-481px — 768px: iPads, Tablets
-769px — 1024px: Small screens, laptops
-1025px — 1200px: Desktops, large screens
-1201px and more —  Extra large screens, TV */
-
-.hidden {
-    display: none;
-}
-
-
-
+/*******************************
+        Animation
+*******************************/
 /* Written by Maddy Osman @maddyosman */
 /* https://blog.hubspot.com/website/css-fade-in */
 .fade-in {
@@ -126,64 +128,27 @@ and (max-device-width : 768px) {
     80% {opacity:0.7;}
     100% {opacity:1;}
 }
-
 @-moz-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
 }
-
 @-webkit-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
 }
-
 @-o-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
 }
-
 @-ms-keyframes fadeIn {
     0% {opacity:0;}
     20% {opacity:0.3;}
     80% {opacity:0.7;}
     100% {opacity:1;}
 }
-
-#smart-rail{
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    margin: 10px 0 0 0;
-    left: 0px;
-    padding: 10px;
-    width: 190px;
-}
-
-#smart-rail .header {
-    font-weight: bold;
-    margin-bottom: 5px;
-    padding: 5px 5px 5px 0;
-    border-bottom: 2px solid;
-}
-
-.ui.list .list > .item, .ui.list > .item, ol.ui.list li, ul.ui.list li {
-    padding: 10px 5px;
-}
-
-.ui.list .list > .item:last-child, .ui.list > .item:last-child, ol.ui.list li:last-child, ul.ui.list li:last-child {
-    padding-bottom: 10px;
-}
-
-.sensor-readings-container.ui.segment {
-    box-shadow: 1px 1px 4px #cbced1;
-}
-
-#smart-rail > .ui.segment {
-    box-shadow: 1px 1px 4px #cbced1;
-} 

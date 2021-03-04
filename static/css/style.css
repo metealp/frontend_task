@@ -6,12 +6,16 @@
 .distribution-chart {
 
 }
+
+body {
+    background: #f5f5f5;
+}
 #main-header {
     text-align: center;
-    padding-left: 160px;
+    padding-left:200px;
 }
 #content {
-    padding-left: 160px;
+    padding-left: 200px;
 }
 
 .sensor-statistics {
@@ -78,7 +82,7 @@
         height: 330px;
     }
     .sensor-readings-container.ui.segment {
-        height: calc(100vh - 30px);
+        height: calc(100vh - 50px);
     }    
 }
 
@@ -152,11 +156,15 @@ and (max-device-width : 768px) {
     top: 0;
     margin: 10px 0 0 0;
     left: 0px;
-    padding-left: 10px;
-    width: 150px;
+    padding: 10px;
+    width: 190px;
 }
 
 #smart-rail .header {
     font-weight: bold;
     margin-bottom: 6px;
+}
+
+.ui.list .list > .item, .ui.list > .item, ol.ui.list li, ul.ui.list li {
+    padding: 10px;
 }

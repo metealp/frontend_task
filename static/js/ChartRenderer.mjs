@@ -83,6 +83,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         content.classList.remove("hidden");
         let header = document.getElementById("main-header");
         header.classList.add("aligned-header");
-        Scroll.scrollListener()
+        Scroll.setScrollListener()
     });
 });

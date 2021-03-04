@@ -9,7 +9,7 @@ const Scroll = {
         const nextActiveTitle = document.querySelector(`#${closestTitleId}-link`);
         nextActiveTitle.classList.add('active');
     },
-    scrollListener: function (){
+    setScrollListener: function (){
         const sections = Array.from(document.getElementsByClassName("ss-section"))
         const sectionsWithPositions = sections.map( (x) => { 
             return { 
@@ -19,7 +19,7 @@ const Scroll = {
         );
         let isScrolling;
         window.addEventListener('scroll', function() {
-            // helped the idea of bouncing
+            // helped the idea of bouncing instead of reacting immediately
             // https://gomakethings.com/detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
             window.clearTimeout( isScrolling );
             isScrolling = setTimeout(function() {

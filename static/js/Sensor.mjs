@@ -41,7 +41,6 @@ export default class SensorDF {
         this.positiveDistribution = this.distributeData(this.positiveDataSorted)
         this.negativeDistribution = this.distributeData(this.negativeDataSorted)
     }
-
     calculateMean( data ) {
         const sumOfArray = data.reduce((a, b) => a + b)
         const mean = sumOfArray/data.length
@@ -66,7 +65,6 @@ export default class SensorDF {
         } while (swapped);
         return outputArr;
     }
-
     calculateVariance( data, mean ) {
         let deviationArray = [];
         for( let item of data) {

@@ -3,14 +3,12 @@ const Scroll = {
         const elem = document.querySelector(`#${elemId}`);
         elem.scrollIntoView();
     },
-
     setActive: function(closestTitleId){
         const previousActiveTitle = document.querySelector(".active.item");
         previousActiveTitle.classList.remove('active');
         const nextActiveTitle = document.querySelector(`#${closestTitleId}-link`);
         nextActiveTitle.classList.add('active');
     },
-    
     scrollListener: function (){
         const sections = Array.from(document.getElementsByClassName("ss-section"))
         const sectionsWithPositions = sections.map( (x) => { 

@@ -82,7 +82,9 @@ body {
         height: 330px;
     }
     .sensor-readings-container.ui.segment {
-        height: calc(100vh - 50px);
+        /* height: calc(100vh - 30px); */
+        height: max-content;
+
     }    
 }
 
@@ -174,3 +176,11 @@ and (max-device-width : 768px) {
 .ui.list .list > .item:last-child, .ui.list > .item:last-child, ol.ui.list li:last-child, ul.ui.list li:last-child {
     padding-bottom: 10px;
 }
+
+.sensor-readings-container.ui.segment {
+    box-shadow: 1px 1px 4px #cbced1;
+}
+
+#smart-rail > .ui.segment {
+    box-shadow: 1px 1px 4px #cbced1;
+} 

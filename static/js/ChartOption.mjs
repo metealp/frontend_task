@@ -41,7 +41,13 @@ export const ChartOption = {
                     stacking: 'normal'
                 }
             },
-            series: series
+            series: series,
+            legend: {
+                enabled: true,
+                labelFormatter: function () {
+                    return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+                }
+            },
     
         }
     },
@@ -74,7 +80,13 @@ export const ChartOption = {
                     borderWidth: 0
                 }
             },
-            series: series
+            series: series,
+            legend: {
+                enabled: true,
+                labelFormatter: function () {
+                    return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+                }
+            },
         }
     },
     OneSensorReading: (sampleCodes, readings) => {
@@ -92,6 +104,12 @@ export const ChartOption = {
             },
             xAxis: {
                 categories: sampleCodes,
+                labels: {
+                    formatter: function () {
+                        let sampleName = this.value.split("e");
+                        return sampleName[1];
+                    }
+                },
                 plotLines: [{
                     color: '#FF0000',
                     width: 2,
@@ -107,24 +125,24 @@ export const ChartOption = {
                 plotBands: [{
                     from: 0,
                     to: midPoint,
-                    color: '#EFFFFF',
+                    color: '#F0FFF0',
                     label: {
                         text: '<em>Class: 1</em>',
                         style: {
-                            color: '#f2f194'
+                            color: '#000000'
                         },
-                        y: 10
+                        y: 15
                     }
                 },{
                     from: midPoint,
                     to: readingLength,
-                    color: '#f2f194',
+                    color: '#FFFAFA',
                     label: {
                         text: '<em>Class: -1</em>',
                         style: {
-                            color: '#EFFFFF'
+                            color: '#000000'
                         },
-                        y: 10
+                        y: 15
                     }
                 },
                 ]
@@ -161,6 +179,12 @@ export const ChartOption = {
             },
             xAxis: {
                 categories: sampleCodes,
+                labels: {
+                    formatter: function () {
+                        let sampleName = this.value.split("e");
+                        return sampleName[1];
+                    }
+                },
                 plotLines: [{
                     color: '#FF0000',
                     width: 2,
@@ -176,24 +200,24 @@ export const ChartOption = {
                 plotBands: [{
                     from: 0,
                     to: midPoint,
-                    color: '#EFFFFF',
+                    color: '#F0FFF0',
                     label: {
                         text: '<em>Class: 1</em>',
                         style: {
-                            color: '#f2f194'
+                            color: '#000000'
                         },
-                        y: 10
+                        y: 15
                     }
                 },{
                     from: midPoint,           
                     to: readingLength,           
-                    color: '#f2f194',
+                    color: '#FFFAFA',
                     label: {
                         text: '<em>Class: -1</em>',
                         style: {
-                            color: '#EFFFFF'
+                            color: '#000000'
                         },
-                        y: 10
+                        y: 15
                     }
                 },
                 ]
@@ -237,7 +261,13 @@ export const ChartOption = {
                     stacking: 'percent'
                 }
             },
-            series: series
+            series: series,
+            legend: {
+                enabled: true,
+                labelFormatter: function () {
+                    return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+                }
+            },
         }
     }
 }

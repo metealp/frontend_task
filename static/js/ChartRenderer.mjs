@@ -8,8 +8,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     const result = await response.json();
     const fetched = result.sensor_data;
     const sampleIndexes = fetched["sample index"];
+    const findTurnPoint = (element, index, array) => {
+        return array[index] !== array[index +1];
+    }
 
-    const pivotIndex = fetched.class_label.indexOf(-1)
+    const pivotIndex = fetched.class_label.findIndex(findTurnPoint);
     for(let i=0; i<10; i++){
         const sensor = `sensor${i}`;
         masterSerie.push({name: sensor, data: fetched[`${sensor}`]});
